@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Mateo, con amor 🖤🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuentes bonitas -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff7aa2, #ffd1dc, #ff9ab5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .big-heart {
+      position: absolute;
+      font-size: 320px;
+      opacity: 0.12;
+      animation: flotarCorazon 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes flotarCorazon {
+      0%   { transform: translateY(0px) scale(1); }
+      50%  { transform: translateY(-30px) scale(1.05); }
+      100% { transform: translateY(0px) scale(1); }
+    }
+
+    .heart-float {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: subir 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes subir {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 36px 28px;
+      border-radius: 28px;
+      max-width: 680px;
+      width: 92%;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+      animation: aparecer 1.2s ease;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      margin-top: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 2.5em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nombre {
+      display: inline-block;
+      border-right: 3px solid #fff;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0% { border-color: transparent; }
+      50% { border-color: #fff; }
+      100% { border-color: transparent; }
+    }
+
+    .subtitulo {
+      font-size: 1.1em;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.15em;
+      line-height: 1.75;
+      margin: 18px 0;
+    }
+
+    .heart {
+      font-size: 72px;
+      animation: latido 1.2s infinite;
+      margin: 15px 0;
+    }
+
+    @keyframes latido {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .cats {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .cats img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      animation: flotar 3s ease-in-out infinite;
+    }
+
+    .cats img:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+
+    @keyframes flotar {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #ff4f7b;
+      font-size: 1.05em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .firma {
+      margin-top: 28px;
+      font-style: italic;
+      font-size: 1.05em;
+      opacity: 0.95;
+    }
+
+    .nota {
+      font-size: 0.85em;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="big-heart">💖</div>
+  <div id="hearts-container"></div>
+
+  <audio id="musica" loop>
+    <source src="i_wanna_be_yours.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="card">
+    <h1>Feliz San Valentín, <span class="nombre" id="nombre"></span> 🖤🤍</h1>
+    <div class="subtitulo">Una cartita hecha con todo mi corazón para ti</div>
+    <div class="heart">💖</div>
+
+    <p>Para ti, mi amor:</p>
+
+    <p>
+      No sé en qué momento exacto te volviste mi lugar seguro, mi pensamiento favorito
+      y la persona que hace que mis días sean más bonitos. Contigo todo es más suave,
+      más cálido y más feliz. Tu risa es mi sonido favorito, tus abrazos mi lugar preferido
+      y tu nombre mi palabra más querida.
+    </p>
+
+    <p>
+      Quiero que sepas algo muy importante: <strong>siempre vas a ser mi osito</strong> 🧸,
+      mi persona especial, mi pedacito de paz y mi amor bonito.  
+      Si pudiera elegir mil veces, mil veces te elegiría a ti.
+    </p>
+
+    <p>
+      Gracias por existir, por quedarte, por cuidarme y por quererme…  
+      y por dejarme quererte así, con todo lo que soy y con todo mi corazón. 💕
+    </p>
+
+    <div class="cats">
+      <img src="gatito1.png.jpg" alt="Gatito blanco y negro">
+      <img src="gatito2.png.jpg" alt="Gatito blanco y negro">
+    </div>
+
+    <button onclick="mostrarMensaje()">Toca aquí 💌</button>
+
+    <!-- 🌟 MENSAJE SORPRESA MÁS BONITO 🌟 -->
+    <p id="mensajeExtra" style="display:none; margin-top:22px; font-size:1.15em; line-height:1.8;">
+      ✨ Sorpresa, mi amor ✨<br><br>
+      Si algún día dudas, recuerda esto: te elijo en tus días felices, en tus días cansados,
+      en tus días grises y en tus días brillantes. Te elijo cuando sonríes y también cuando
+      necesitas un abrazo en silencio.  
+      Quiero caminar contigo, crecer contigo y construir mil recuerdos a tu lado.  
+      Prometo cuidarte con ternura, quererte con paciencia y amarte con todo mi corazón.  
+      Gracias por ser mi persona favorita en este mundo… y por siempre ser mi osito. 🧸💖
+    </p>
+
+    <div class="firma">
+      — Con todo mi amor, <strong>Alinita</strong>
+    </div>
+
+    <div class="nota">
+      (Si la música no suena, toca la pantalla una vez 😉)
+    </div>
+  </div>
+
+  <script>
+    // Efecto de escritura para el nombre
+    const nombreTexto = "Mateo";
+    const nombreElemento = document.getElementById("nombre");
+    let i = 0;
+
+    function escribirNombre() {
+      if (i < nombreTexto.length) {
+        nombreElemento.textContent += nombreTexto.charAt(i);
+        i++;
+        setTimeout(escribirNombre, 200);
+      }
+    }
+    escribirNombre();
+
+    // Corazones flotando
+    const heartsContainer = document.getElementById("hearts-container");
+
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart-float");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+      heart.style.fontSize = (18 + Math.random() * 20) + "px";
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    setInterval(crearCorazon, 600);
+
+    function mostrarMensaje() {
+      const msg = document.getElementById("mensajeExtra");
+      msg.style.display = "block";
+      const audio = document.getElementById("musica");
+      audio.play().catch(()=>{});
+    }
+  </script>
+
+</body>
+</html>
